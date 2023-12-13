@@ -1,11 +1,13 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import Deck from "./models/deck";
+import cors from "cors";
 
 require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
